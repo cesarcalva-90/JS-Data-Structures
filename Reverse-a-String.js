@@ -1,10 +1,10 @@
 function reverse(str) {
-  if (!str || str.length < 2) {
-    return str;
+  if (!str || str.length < 2 || typeof str !== "string") {
+    return "error";
   } else {
     let revStr = "";
-    for (let i = str.length - 1; i >= 0; i--) {
-      revStr = revStr + str[i];
+    for (let i = 0; i < str.length; i++) {
+      revStr = str[i] + revStr;
     }
     return revStr;
   }
