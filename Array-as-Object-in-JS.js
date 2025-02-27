@@ -1,4 +1,4 @@
-export class MyArray {
+class MyArray {
   constructor() {
     this.length = 0;
     this.data = {};
@@ -19,14 +19,13 @@ export class MyArray {
   }
   delete(index) {
     const item = this.data[index];
-    delete this.data[index];
+    // delete this.data[index];   // No need since shiftItems method is already deleting the last item
     this.shiftItems(index);
     return item;
   }
   shiftItems(index) {
     for (let i = index; i < this.length - 1; i++) {
-      //Shift items to left
-      this.data[i] = this.data[i + 1];
+      this.data[i] = this.data[i + 1]; //Shift items to left
     }
     delete this.data[this.length - 1]; //Delete last item
     this.length--;
@@ -42,6 +41,7 @@ newArray.push("b");
 newArray.push("c");
 newArray.push("d");
 newArray.push("e");
+newArray.delete(2);
 newArray.delete(2);
 console.log(newArray);
 console.log(newArray.length);
