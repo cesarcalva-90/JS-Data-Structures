@@ -13,7 +13,7 @@ class Stack {
   }
 
   peek() {
-    if (!this.top) {
+    if (this.length === 0) {
       return;
     }
     return this.top;
@@ -21,7 +21,7 @@ class Stack {
 
   push(value) {
     const newNode = new Node(value);
-    if (!this.top) {
+    if (this.length === 0) {
       this.top = newNode;
       this.bottom = newNode;
       this.bottom.next = null;
@@ -32,7 +32,7 @@ class Stack {
   }
 
   pop() {
-    if (!this.top) {
+    if (this.length === 0) {
       return;
     }
     const tempVar = this.top;
